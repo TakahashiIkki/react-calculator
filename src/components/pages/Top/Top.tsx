@@ -41,7 +41,7 @@ export const Top = () => {
   return (
     <Container>
       <CalculatorBox>
-        <DisplayBox>0000</DisplayBox>
+        <DisplayBox>0</DisplayBox>
         <ControllBox>
           <ControllRow>
             <ClearButton />
