@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 type NumberButtonProps = {
   number: number;
+  handleClickButton: (i: number) => void;
 };
 
 const StyledButton = styled.button`
@@ -15,5 +16,9 @@ const StyledButton = styled.button`
 `;
 
 export const NumberButton = (props: NumberButtonProps) => {
-  return <StyledButton>{props.number}</StyledButton>;
+  return (
+    <StyledButton onClick={() => props.handleClickButton(props.number)}>
+      {props.number}
+    </StyledButton>
+  );
 };

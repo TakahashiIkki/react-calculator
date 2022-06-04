@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 type ClearButtonProps = {
   displayText?: string;
+  handleClearButton: () => void;
 };
 
 const StyledButton = styled.button`
@@ -15,5 +16,9 @@ const StyledButton = styled.button`
 `;
 
 export const ClearButton = (props: ClearButtonProps) => {
-  return <StyledButton>{props.displayText ?? 'AC'}</StyledButton>;
+  return (
+    <StyledButton onClick={() => props.handleClearButton()}>
+      {props.displayText ?? 'AC'}
+    </StyledButton>
+  );
 };
