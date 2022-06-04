@@ -52,8 +52,8 @@ export const Top = () => {
         <ControlBox>
           <ControlRow>
             <ClearButton handleClearButton={() => setNumber(0)} />
-            <OperatorButton operator="+/-" />
-            <OperatorButton operator="%" />
+            <OperatorButton operator="+/-" handleClickButton={() => setNumber(number * -1)} />
+            <OperatorButton operator="%" handleClickButton={() => setNumber(number / 100)} />
             <OperatorButton operator="÷" />
           </ControlRow>
           <ControlRow>

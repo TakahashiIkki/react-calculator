@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 type OperatorButtonProps = {
   operator: string;
+  handleClickButton?: () => void;
 };
 
 const StyledButton = styled.button`
@@ -15,5 +16,15 @@ const StyledButton = styled.button`
 `;
 
 export const OperatorButton = (props: OperatorButtonProps) => {
-  return <StyledButton>{props.operator}</StyledButton>;
+  return (
+    <StyledButton
+      onClick={() => {
+        if (props.handleClickButton) {
+          props.handleClickButton();
+        }
+      }}
+    >
+      {props.operator}
+    </StyledButton>
+  );
 };
